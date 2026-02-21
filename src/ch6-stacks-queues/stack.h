@@ -1,3 +1,5 @@
+#ifndef STACK_H
+#define STACK_H
 typedef struct Stack_ {
   int buffer_size;
   int size;
@@ -8,4 +10,7 @@ typedef struct Stack_ {
 int stack_init(Stack *stack, void (*destroy)(void *data),
                int initial_buffer_size);
 int stack_pop(Stack *stack, void **data);
+int stack_peek(const Stack *stack, void **data);
 int stack_push(Stack *stack, void *data);
+void stack_destroy(Stack *stack);
+#endif
