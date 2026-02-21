@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "linked_list_test",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/src/ch5-linked-lists/linked_list_test",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "dlist_test",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/src/ch5-linked-lists/dlist_test",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
