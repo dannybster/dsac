@@ -1,0 +1,17 @@
+add_executable(list_test list_test.c list.c)
+add_test(NAME list_test COMMAND list_test)
+set_tests_properties(list_test PROPERTIES LABELS "asan")
+add_test(NAME list_test_leaks COMMAND leaks --atExit -- $<TARGET_FILE:list_test>)
+set_tests_properties(list_test_leaks PROPERTIES LABELS "leaks")
+
+add_executable(dlist_test dlist_test.c dlist.c)
+add_test(NAME dlist_test COMMAND dlist_test)
+set_tests_properties(dlist_test PROPERTIES LABELS "asan")
+add_test(NAME dlist_test_leaks COMMAND leaks --atExit -- $<TARGET_FILE:dlist_test>)
+set_tests_properties(dlist_test_leaks PROPERTIES LABELS "leaks")
+
+add_executable(clist_test clist_test.c clist.c)
+add_test(NAME clist_test COMMAND clist_test)
+set_tests_properties(clist_test PROPERTIES LABELS "asan")
+add_test(NAME clist_test_leaks COMMAND leaks --atExit -- $<TARGET_FILE:clist_test>)
+set_tests_properties(clist_test_leaks PROPERTIES LABELS "leaks")
