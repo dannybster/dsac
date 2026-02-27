@@ -45,7 +45,7 @@
 
 #define ASSERT_PTR_EQ(a, b)                                                    \
   do {                                                                         \
-    const void *_a = (a), *_b = (b);                                           \
+    const void *_a = (void *)(a), *_b = (void *)(b);                           \
     if (_a != _b) {                                                            \
       printf("FAIL: %s == %s (got %p, expected %p)\n", #a, #b, _a, _b);        \
       abort();                                                                 \
