@@ -80,5 +80,6 @@ void oahash_table_destroy(OAHashTable *t) {
     if (t->destroy && t->slots[i] && t->slots[i] != t->vacated)
       t->destroy(t->slots[i]);
   }
+  free(t->slots);
   memset(t, 0, sizeof(OAHashTable));
 }

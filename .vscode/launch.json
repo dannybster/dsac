@@ -21,6 +21,21 @@
       "request": "launch",
       "program": "${workspaceFolder}/build/src/ch8-hash-tables/oahash_table_test",
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "bitree_test",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/src/ch9-trees/bi_tree_test",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "heap_test",
+      "type": "codelldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/src/ch10-heaps/heap_test",
+      "cwd": "${workspaceFolder}",
+      "expressions": "native"
     }
   ]
 }
