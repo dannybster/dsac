@@ -63,16 +63,16 @@ int heap_extract(Heap *h, void **out) {
     if ((temp = realloc(h->data, h->size * sizeof(void *))) == NULL)
       return -1;
 
-    int npos = 0;
-    int ipos = 0;
-    int lpos = heap_left(npos);
-    int rpos = heap_right(npos);
+    int current_pos = 0;
+    int next_pos = 0;
+    int left_pos = heap_left(next_pos);
+    int right_pos = heap_right(next_pos);
 
-    if (h->cmp(h->data[lpos], h->data[npos]) > 0)
-      ipos = lpos;
+    if (h->cmp(h->data[left_pos], h->data[next_pos]) > 0)
+      next_pos = left_pos;
 
-    if (h->cmp(h->data[rpos], h->data[ipos]) > 0)
-      ipos = rpos;
+    if (h->cmp(h->data[right_pos], h->data[current_pos]) > 0)
+      next_pos = right_pos;
 
     h->data = temp;
     h->data[0] = last;
